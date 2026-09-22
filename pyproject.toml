@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "artifactspan"
-version = "0.1.1"
+version = "0.1.2"
 description = "Preflight artifact names and producer-consumer ordering in GitHub Actions."
 readme = "README.md"
 requires-python = ">=3.11"

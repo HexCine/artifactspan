@@ -1,5 +1,10 @@
 # ArtifactSpan
 
+**[Start here: visual guide EN/RU](https://github.com/HexCine/artifactspan/releases/download/v0.1.2/start.html)** · [Русский: первый запуск](docs/QUICKSTART.ru.md)
+
+Download `start.html` and open it in your browser for installation, a failing demo,
+a passing comparison and next steps. Examples are synthetic and run locally.
+
 [![CI](https://github.com/HexCine/artifactspan/actions/workflows/ci.yml/badge.svg)](https://github.com/HexCine/artifactspan/actions/workflows/ci.yml)
 
 Find artifact-name collisions and missing producer ordering in GitHub Actions
@@ -10,14 +15,14 @@ A workflow can be valid YAML and pass ordinary input checks while every matrix
 leg uploads `build`, or a consumer downloads `build-linux` without waiting for
 the build job. ArtifactSpan focuses on that gap. Use it alongside actionlint.
 
-Python 3.11+, PyYAML 6, MIT. Version 0.1.1 is an early release.
+Python 3.11+, PyYAML 6, MIT. Version 0.1.2 is an early release.
 No GitHub token, network requests, shell execution, repository edits or uploads.
 
 ## Download a release
 
-[Release v0.1.1](https://github.com/HexCine/artifactspan/releases/tag/v0.1.1) includes a wheel, source
+[Release v0.1.2](https://github.com/HexCine/artifactspan/releases/tag/v0.1.2) includes a wheel, source
 archives, checksums and a verification record. With Python 3.11+, install the
-downloaded wheel using `python -m pip install artifactspan-0.1.1-py3-none-any.whl`.
+downloaded wheel using `python -m pip install artifactspan-0.1.2-py3-none-any.whl`.
 Runtime dependencies listed below are resolved by pip when needed.
 For source development, clone this repository and follow the existing install steps.
 
