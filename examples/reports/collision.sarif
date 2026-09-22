@@ -1,0 +1,89 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "artifactspan",
+          "version": "0.1.1"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "duplicate_upload",
+          "level": "error",
+          "message": {
+            "text": "Multiple upload instances share one artifact name; use a distinct name per producer."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/collision.yml"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/collision.yml"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "producer_not_ordered",
+          "level": "error",
+          "message": {
+            "text": "No matching producer precedes this download; add needs or move the download after the upload."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/collision.yml"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/collision.yml"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/collision.yml"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ]
+    }
+  ]
+}

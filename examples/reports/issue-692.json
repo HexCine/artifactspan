@@ -1,0 +1,167 @@
+{
+  "provenance": {
+    "url": "https://github.com/actions/upload-artifact/issues/692",
+    "retrieved": "2026-09-21",
+    "input": "Unmodified YAML code block containing jobs, extracted from issue body",
+    "sha256": "0591af6018700273504f5c0d022721501f4fcb1c0968c98a49739006d9dac3c8",
+    "workflow_executed": false
+  },
+  "report": {
+    "schema_version": 1,
+    "tool": "artifactspan",
+    "complete": true,
+    "scope": "direct artifact actions, successful jobs, one workflow run attempt",
+    "modern_refs": [],
+    "events": [
+      {
+        "job": "test",
+        "leg": 1,
+        "step": 7,
+        "line": 64,
+        "matrix": {
+          "shard": "1/5"
+        },
+        "kind": "upload",
+        "name": "all-blob-reports-1/5",
+        "conditional": true,
+        "overwrite": false
+      },
+      {
+        "job": "test",
+        "leg": 2,
+        "step": 7,
+        "line": 64,
+        "matrix": {
+          "shard": "2/5"
+        },
+        "kind": "upload",
+        "name": "all-blob-reports-2/5",
+        "conditional": true,
+        "overwrite": false
+      },
+      {
+        "job": "test",
+        "leg": 3,
+        "step": 7,
+        "line": 64,
+        "matrix": {
+          "shard": "3/5"
+        },
+        "kind": "upload",
+        "name": "all-blob-reports-3/5",
+        "conditional": true,
+        "overwrite": false
+      },
+      {
+        "job": "test",
+        "leg": 4,
+        "step": 7,
+        "line": 64,
+        "matrix": {
+          "shard": "4/5"
+        },
+        "kind": "upload",
+        "name": "all-blob-reports-4/5",
+        "conditional": true,
+        "overwrite": false
+      },
+      {
+        "job": "test",
+        "leg": 5,
+        "step": 7,
+        "line": 64,
+        "matrix": {
+          "shard": "5/5"
+        },
+        "kind": "upload",
+        "name": "all-blob-reports-5/5",
+        "conditional": true,
+        "overwrite": false
+      }
+    ],
+    "edges": [],
+    "findings": [
+      {
+        "code": "invalid_artifact_name",
+        "artifact": "all-blob-reports-1/5",
+        "sites": [
+          {
+            "job": "test",
+            "leg": 1,
+            "step": 7,
+            "line": 64,
+            "matrix": {
+              "shard": "1/5"
+            }
+          }
+        ],
+        "message": "Artifact name is empty or contains a forbidden character."
+      },
+      {
+        "code": "invalid_artifact_name",
+        "artifact": "all-blob-reports-2/5",
+        "sites": [
+          {
+            "job": "test",
+            "leg": 2,
+            "step": 7,
+            "line": 64,
+            "matrix": {
+              "shard": "2/5"
+            }
+          }
+        ],
+        "message": "Artifact name is empty or contains a forbidden character."
+      },
+      {
+        "code": "invalid_artifact_name",
+        "artifact": "all-blob-reports-3/5",
+        "sites": [
+          {
+            "job": "test",
+            "leg": 3,
+            "step": 7,
+            "line": 64,
+            "matrix": {
+              "shard": "3/5"
+            }
+          }
+        ],
+        "message": "Artifact name is empty or contains a forbidden character."
+      },
+      {
+        "code": "invalid_artifact_name",
+        "artifact": "all-blob-reports-4/5",
+        "sites": [
+          {
+            "job": "test",
+            "leg": 4,
+            "step": 7,
+            "line": 64,
+            "matrix": {
+              "shard": "4/5"
+            }
+          }
+        ],
+        "message": "Artifact name is empty or contains a forbidden character."
+      },
+      {
+        "code": "invalid_artifact_name",
+        "artifact": "all-blob-reports-5/5",
+        "sites": [
+          {
+            "job": "test",
+            "leg": 5,
+            "step": 7,
+            "line": 64,
+            "matrix": {
+              "shard": "5/5"
+            }
+          }
+        ],
+        "message": "Artifact name is empty or contains a forbidden character."
+      }
+    ],
+    "unknowns": []
+  }
+}

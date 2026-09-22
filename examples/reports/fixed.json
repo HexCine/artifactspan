@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "tool": "artifactspan",
+  "complete": true,
+  "scope": "direct artifact actions, successful jobs, one workflow run attempt",
+  "modern_refs": [],
+  "events": [
+    {
+      "job": "build",
+      "leg": 1,
+      "step": 2,
+      "line": 11,
+      "matrix": {
+        "os": "ubuntu-latest"
+      },
+      "kind": "upload",
+      "name": "result-ubuntu-latest",
+      "conditional": false,
+      "overwrite": false
+    },
+    {
+      "job": "build",
+      "leg": 2,
+      "step": 2,
+      "line": 11,
+      "matrix": {
+        "os": "windows-latest"
+      },
+      "kind": "upload",
+      "name": "result-windows-latest",
+      "conditional": false,
+      "overwrite": false
+    },
+    {
+      "job": "consume",
+      "leg": 1,
+      "step": 1,
+      "line": 19,
+      "matrix": {},
+      "kind": "download",
+      "name": "result-ubuntu-latest",
+      "conditional": false,
+      "overwrite": false
+    },
+    {
+      "job": "consume",
+      "leg": 1,
+      "step": 2,
+      "line": 23,
+      "matrix": {},
+      "kind": "download",
+      "name": "result-windows-latest",
+      "conditional": false,
+      "overwrite": false
+    }
+  ],
+  "edges": [
+    {
+      "artifact": "result-ubuntu-latest",
+      "producer": {
+        "job": "build",
+        "leg": 1,
+        "step": 2,
+        "line": 11,
+        "matrix": {
+          "os": "ubuntu-latest"
+        }
+      },
+      "consumer": {
+        "job": "consume",
+        "leg": 1,
+        "step": 1,
+        "line": 19,
+        "matrix": {}
+      }
+    },
+    {
+      "artifact": "result-windows-latest",
+      "producer": {
+        "job": "build",
+        "leg": 2,
+        "step": 2,
+        "line": 11,
+        "matrix": {
+          "os": "windows-latest"
+        }
+      },
+      "consumer": {
+        "job": "consume",
+        "leg": 1,
+        "step": 2,
+        "line": 23,
+        "matrix": {}
+      }
+    }
+  ],
+  "findings": [],
+  "unknowns": []
+}

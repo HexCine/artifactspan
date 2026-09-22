@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "tool": "artifactspan",
+  "complete": false,
+  "scope": "direct artifact actions, successful jobs, one workflow run attempt",
+  "modern_refs": [],
+  "events": [],
+  "edges": [],
+  "findings": [],
+  "unknowns": [
+    {
+      "code": "dynamic_matrix",
+      "job": "build",
+      "step": 0,
+      "line": 6
+    }
+  ]
+}

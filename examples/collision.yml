@@ -1,0 +1,20 @@
+name: Artifact collision example
+on: push
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - run: echo synthetic > result.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: result
+          path: result.txt
+  consume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: result

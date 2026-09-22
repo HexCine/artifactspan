@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "tool": "artifactspan",
+  "complete": true,
+  "scope": "direct artifact actions, successful jobs, one workflow run attempt",
+  "modern_refs": [],
+  "events": [
+    {
+      "job": "build",
+      "leg": 1,
+      "step": 2,
+      "line": 11,
+      "matrix": {
+        "os": "ubuntu-latest"
+      },
+      "kind": "upload",
+      "name": "result",
+      "conditional": false,
+      "overwrite": false
+    },
+    {
+      "job": "build",
+      "leg": 2,
+      "step": 2,
+      "line": 11,
+      "matrix": {
+        "os": "windows-latest"
+      },
+      "kind": "upload",
+      "name": "result",
+      "conditional": false,
+      "overwrite": false
+    },
+    {
+      "job": "consume",
+      "leg": 1,
+      "step": 1,
+      "line": 18,
+      "matrix": {},
+      "kind": "download",
+      "name": "result",
+      "conditional": false,
+      "overwrite": false
+    }
+  ],
+  "edges": [],
+  "findings": [
+    {
+      "code": "duplicate_upload",
+      "artifact": "result",
+      "sites": [
+        {
+          "job": "build",
+          "leg": 1,
+          "step": 2,
+          "line": 11,
+          "matrix": {
+            "os": "ubuntu-latest"
+          }
+        },
+        {
+          "job": "build",
+          "leg": 2,
+          "step": 2,
+          "line": 11,
+          "matrix": {
+            "os": "windows-latest"
+          }
+        }
+      ],
+      "message": "Multiple upload instances share one artifact name; use a distinct name per producer."
+    },
+    {
+      "code": "producer_not_ordered",
+      "artifact": "result",
+      "sites": [
+        {
+          "job": "consume",
+          "leg": 1,
+          "step": 1,
+          "line": 18,
+          "matrix": {}
+        },
+        {
+          "job": "build",
+          "leg": 1,
+          "step": 2,
+          "line": 11,
+          "matrix": {
+            "os": "ubuntu-latest"
+          }
+        },
+        {
+          "job": "build",
+          "leg": 2,
+          "step": 2,
+          "line": 11,
+          "matrix": {
+            "os": "windows-latest"
+          }
+        }
+      ],
+      "message": "No matching producer precedes this download; add needs or move the download after the upload."
+    }
+  ],
+  "unknowns": []
+}

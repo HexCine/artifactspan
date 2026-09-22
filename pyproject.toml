@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "artifactspan"
+version = "0.1.1"
+description = "Preflight artifact names and producer-consumer ordering in GitHub Actions."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "artifactspan contributors"}]
+dependencies = ["PyYAML>=6.0.2,<7"]
+classifiers = ["Development Status :: 3 - Alpha", "Environment :: Console", "Operating System :: OS Independent", "Programming Language :: Python :: 3"]
+
+[project.urls]
+Repository = "https://github.com/HexCine/artifactspan"
+Issues = "https://github.com/HexCine/artifactspan/issues"
+Documentation = "https://github.com/HexCine/artifactspan/blob/main/README.md"
+
+[project.scripts]
+artifactspan = "artifactspan.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/artifactspan"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/examples", "/docs", "/README.md", "/LICENSE", "/CONTRIBUTING.md", "/SECURITY.md", "/CHANGELOG.md", "/pyproject.toml", "/.github", "/.gitignore"]

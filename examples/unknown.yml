@@ -1,0 +1,12 @@
+name: Dynamic matrix requires runtime information
+on: workflow_dispatch
+jobs:
+  build:
+    strategy:
+      matrix: ${{ fromJSON(inputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          name: result-${{ matrix.os }}
+          path: result.txt
